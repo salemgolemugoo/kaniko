@@ -48,10 +48,12 @@ func Configure(level, format string) error {
 	case FormatText:
 		formatter = &logrus.TextFormatter{
 			DisableColors: true,
+			EnvironmentOverrideColors: true,
 		}
 	case FormatColor:
 		formatter = &logrus.TextFormatter{
 			ForceColors: true,
+			EnvironmentOverrideColors: true,
 		}
 	case FormatJSON:
 		formatter = &logrus.JSONFormatter{}
